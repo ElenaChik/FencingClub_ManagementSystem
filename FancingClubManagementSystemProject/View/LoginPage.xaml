@@ -1,0 +1,25 @@
+﻿<Window x:Name="showButton" x:Class="FancingClubManagementSystemProject.View.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FancingClubManagementSystemProject.View"
+        mc:Ignorable="d"
+        Title="LoginPage" Height="450" Width="800">
+    <Grid>
+     
+                   <PasswordBox x:Name="passBox" HorizontalAlignment="Left" Margin="27,222,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="loginBox" HorizontalAlignment="Left" Margin="27,178,0,0" TextWrapping="Wrap" Text="login" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="adminRadio" Content="Admin" HorizontalAlignment="Left" Margin="44,72,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="coachRadio" Content="Coach" HorizontalAlignment="Left" Margin="44,105,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="memberRadio" Content="Member" HorizontalAlignment="Left" Margin="44,137,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="addUserLabel" Content="Add new User" HorizontalAlignment="Left" Margin="28,41,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="addUserButton" Content="Add User" HorizontalAlignment="Left" Margin="49,273,0,0" VerticalAlignment="Top" Click="addUserButton_Click"/>
+        <DataGrid x:Name="tableDataGrid"  Margin="195,105,37,127"/>
+        <Button x:Name="showButton1" Content="Show  Table" HorizontalAlignment="Left" Margin="238,41,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+       
+           
+    </Grid>
+
+
+</Window>
