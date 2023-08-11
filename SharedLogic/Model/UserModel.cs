@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model 
 {
-    internal class UserModel
+    public class UserModel
     {
         public Users user = new Users();
         private List<Users> users;

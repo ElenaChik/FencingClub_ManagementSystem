@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace FancingClubManagementSystemProject.DAO
 {
-    internal class UserDAO
+    public class UserDAO
     {
         Connector connector = new Connector();
 
@@ -38,10 +38,10 @@ namespace FancingClubManagementSystemProject.DAO
                 }
                 reader.Close();
             }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             finally 
             { 
                 connector.con.Close(); 

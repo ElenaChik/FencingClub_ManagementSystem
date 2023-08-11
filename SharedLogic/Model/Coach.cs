@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FancingClubManagementSystemProject.DB
+namespace FancingClubManagementSystemProject.Model
 {
-    internal class Constants
+    public class Coach 
     {
     }
 }

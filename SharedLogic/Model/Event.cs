@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model
 {
-    internal class Event
+    public class Event
     {
         private int idEvent { get; set; }
         private string date { get; set; }

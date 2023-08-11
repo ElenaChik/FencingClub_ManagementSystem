@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model
 {
-    internal class Group
+    public class Group
     {
         private int OidGroup { get;set; }
         private string Name { get;set; }

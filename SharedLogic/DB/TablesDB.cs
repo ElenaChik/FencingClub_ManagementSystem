@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.DB
 {
-    internal class TablesDB
+    public class TablesDB
     {
         Connector connector;
         private NpgsqlCommand cmd;

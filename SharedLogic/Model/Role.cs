@@ -1,6 +1,6 @@
 ﻿namespace FancingClubManagementSystemProject.Model
 {
-    enum Role
+    public enum Role
     {
        admin,
        coach,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model
 {
-    internal partial class Users
+    public partial class Users
     {
         public int idUser { get; set; }
         public int name { get; set; }
@@ -14,9 +14,4 @@ namespace FancingClubManagementSystemProject.Model
         public string password { get; set; }
         public string dateCreated { get; set; }
     }
-
-   
-
-
-
 }

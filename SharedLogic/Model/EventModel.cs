@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model
 {
-    internal class Coach 
+    public class EventModel
     {
+        private Event ev = new Event();
+       
     }
 }

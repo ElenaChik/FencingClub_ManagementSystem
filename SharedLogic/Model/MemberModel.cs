@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model
 {
-    internal class CoachModel
+    public class MemberModel
     {
     }
 }

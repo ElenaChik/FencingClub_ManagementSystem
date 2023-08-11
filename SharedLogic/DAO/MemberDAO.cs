@@ -1,16 +1,7 @@
-﻿using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows;
-using System.Windows.Controls.Primitives;
+﻿using FancingClubManagementSystemProject.DB;
 using FancingClubManagementSystemProject.Model;
+using Npgsql;
 using System.Data;
-using FancingClubManagementSystemProject.DB;
-using FancingClubManagementSystemProject.View;
 
 namespace FancingClubManagementSystemProject.DAO
 {
@@ -35,12 +26,14 @@ namespace FancingClubManagementSystemProject.DAO
 
                 connector.cmd.ExecuteNonQuery();
                 //MessageBox.Show("Data Update Successful");
-
-                connector.con.Close();
             }
-            catch (NpgsqlException ex)
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
             {
-                MessageBox.Show(ex.Message);
+                connector.con.Close();
             }
 
             return dt;
@@ -89,10 +82,10 @@ namespace FancingClubManagementSystemProject.DAO
                 reader.Close();*/
                 
             }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             finally
             {
                 connector.con.Close();
@@ -130,12 +123,14 @@ namespace FancingClubManagementSystemProject.DAO
 
                 connector.cmd.ExecuteNonQuery();
                 //MessageBox.Show("Data Insertion Successful");
-
-                connector.con.Close();
             }
-            catch (NpgsqlException ex)
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
             {
-                MessageBox.Show(ex.Message);
+                connector.con.Close();
             }
         }
 
@@ -166,13 +161,15 @@ namespace FancingClubManagementSystemProject.DAO
 
                     connector.cmd.ExecuteNonQuery();
                     //MessageBox.Show("Data Update Successful");
-
-                    connector.con.Close();
                 }
-                catch (NpgsqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
+            {
+                connector.con.Close();
+            }
             
         }
         public void deleteMemberByID(int idMember)
@@ -190,14 +187,15 @@ namespace FancingClubManagementSystemProject.DAO
 
                 connector.cmd.ExecuteNonQuery();
                 //MessageBox.Show("Data Deleted Successful");
-
+            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
+            {
                 connector.con.Close();
             }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
     }
 }

@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql" Version="7.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FancingClubManagementSystemProject\FancingClubManagementSystemProject.csproj" />
+    <ProjectReference Include="..\SharedLogic\SharedLogic.csproj" />
   </ItemGroup>
 
 </Project>

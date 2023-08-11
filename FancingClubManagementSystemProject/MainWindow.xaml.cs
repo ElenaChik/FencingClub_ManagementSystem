@@ -87,8 +87,8 @@ namespace FancingClubManagementSystemProject
         public MainWindow()
         {
             InitializeComponent();
-            ExtraDAO extraDAO = new ExtraDAO();
-            MemberDAO memberDAO = new MemberDAO();
+            //ExtraDAO extraDAO = new ExtraDAO();
+            //MemberDAO memberDAO = new MemberDAO();
 
             //extraDAO.createMemberTable();
             

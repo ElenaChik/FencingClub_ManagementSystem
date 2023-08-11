@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.DAO
 {
-    internal class EventDAO
+    public class EventDAO
     {
     }
 }

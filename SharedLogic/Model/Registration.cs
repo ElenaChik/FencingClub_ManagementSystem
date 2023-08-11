@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Xml.Linq;
-
-namespace FancingClubManagementSystemProject.Model
+﻿namespace FancingClubManagementSystemProject.Model
 {
     public class Registration
     {

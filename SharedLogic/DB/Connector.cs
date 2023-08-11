@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace FancingClubManagementSystemProject.DB
 {
-    internal class Connector
+    public class Connector
     {
         // connection adapter
         public NpgsqlConnection con;
@@ -41,18 +41,18 @@ namespace FancingClubManagementSystemProject.DB
             // sql command adapter
             //NpgsqlCommand cmd;
 
-            try
-            {
+            //try
+            //{
                 // create the connection
                 con = new NpgsqlConnection(getConnectionString());
                 //con.Open();
 
-                MessageBox.Show("Database Connection Successful");
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                //MessageBox.Show("Database Connection Successful");
+            //}
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
     }

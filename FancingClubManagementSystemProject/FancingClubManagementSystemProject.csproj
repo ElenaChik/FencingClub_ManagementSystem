@@ -112,17 +112,6 @@
     <Compile Include="Controller\MnageUsersController.cs" />
     <Compile Include="Controller\RESTController.cs" />
     <Compile Include="Controller\WPFController.cs" />
-    <Compile Include="DAO\EventDAO.cs" />
-    <Compile Include="DAO\ExtraDAO.cs" />
-    <Compile Include="DAO\MemberDAO.cs" />
-    <Compile Include="DAO\UserDAO.cs" />
-    <Compile Include="DB\Connector.cs" />
-    <Compile Include="DB\Constants.cs" />
-    <Compile Include="DB\TablesDB.cs" />
-    <Compile Include="Model\Event.cs" />
-    <Compile Include="Model\EventModel.cs" />
-    <Compile Include="Model\Group.cs" />
-    <Compile Include="Model\Registration.cs" />
     <Compile Include="Service\DBService.cs" />
     <Compile Include="Service\FensingService.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
@@ -153,13 +142,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Coach.cs" />
-    <Compile Include="Model\CoachModel.cs" />
-    <Compile Include="Model\Member.cs" />
-    <Compile Include="Model\MemberModel.cs" />
-    <Compile Include="Model\Users.cs" />
-    <Compile Include="Model\Role.cs" />
-    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -197,6 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLogic\SharedLogic.csproj">
+      <Project>{e639fa90-2db7-44a8-916c-f73f4765b1ce}</Project>
+      <Name>SharedLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

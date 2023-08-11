@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace FancingClubManagementSystemProject.DAO
 {
-    internal class ExtraDAO
+    public class ExtraDAO
     {
         Connector connector = new Connector();
 
@@ -38,10 +38,10 @@ namespace FancingClubManagementSystemProject.DAO
                 connector.cmd.ExecuteNonQuery();
                 //connector.cmd.Parameters.AddWithValue("@login", login);
             }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             finally
             {
                 connector.con.Close();
