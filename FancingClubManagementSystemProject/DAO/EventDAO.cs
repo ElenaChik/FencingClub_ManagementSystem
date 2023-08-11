@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FancingClubManagementSystemProject.Model
+namespace FancingClubManagementSystemProject.DAO
 {
-    internal class AdminModel
+    internal class EventDAO
     {
     }
 }

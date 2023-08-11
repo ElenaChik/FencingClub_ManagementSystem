@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using FancingClubManagementSystemProject.DB;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,7 +22,8 @@ namespace FancingClubManagementSystemProject.View
     /// </summary>
     public partial class LoginPage : Window
     {
-
+        Connector connector = new Connector();
+        /*
         private static string getConnectionStringLogPage()
         {
             // in this method, we are going to create a connection string for the PostGreSQL server..
@@ -52,12 +54,12 @@ namespace FancingClubManagementSystemProject.View
                 // create the connection
                 con = new NpgsqlConnection(getConnectionStringLogPage());
 
-                /*
-                 * we actually need to pass the connectionString inside the NpgsqlConnection adapter
-                 * class constructor. To do so, we are calling the getConnectionString() method as 
-                 * this method returns us the Database connection String we have created for 
-                 * our work. 
-                 */
+                
+                //* we actually need to pass the connectionString inside the NpgsqlConnection adapter
+                // * class constructor. To do so, we are calling the getConnectionString() method as 
+                // * this method returns us the Database connection String we have created for 
+                 //* our work. 
+                
                 MessageBox.Show("Database Connection Successful");
             }
             catch (NpgsqlException ex)
@@ -65,17 +67,23 @@ namespace FancingClubManagementSystemProject.View
                 MessageBox.Show(ex.Message);
             }
         }
+        */
 
         public LoginPage()
         {
             InitializeComponent();
+            
         }
 
-        private void addUserButton_Click(object sender, RoutedEventArgs e)
+        
+        /*
+         * Method add new Member user
+         */
+        /*private void addUserButton_Click(object sender, RoutedEventArgs e)
         {
-            
-             // establish connection
-            establishConnection();
+
+            // establish connection
+            connector.establishConnection();
             try
             {
                 // open the connection
@@ -91,16 +99,18 @@ namespace FancingClubManagementSystemProject.View
 
                 // we now need to add the values for the parameters in the sql query
 
-                // cmd.Parameters.AddWithValue("@id", int.Parse("DEFAULT"));
                 cmd.Parameters.AddWithValue("@login", loginBox.Text);
                 cmd.Parameters.AddWithValue("@password", passBox.Password);
-                cmd.Parameters.AddWithValue("@role", "Role");
-                // cmd.Parameters.AddWithValue("@dateCreated", 2023-01-01);
+                cmd.Parameters.AddWithValue("@role", "Member");
+
 
                 // execute the Query
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Data Insertion Successful");
+
+                
+
                 // close the Connection
                 con.Close();
 
@@ -113,7 +123,7 @@ namespace FancingClubManagementSystemProject.View
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void updateTable()
         {
             establishConnection();
 
@@ -121,7 +131,7 @@ namespace FancingClubManagementSystemProject.View
             {
                 con.Open();
 
-                string Query = "Select * from public.\"User\"";
+                string Query = "Select * from public.\"Member\"";
 
                 cmd = new NpgsqlCommand(Query, con);
 
@@ -135,13 +145,13 @@ namespace FancingClubManagementSystemProject.View
 
                 con.Close();
 
-            } catch(NpgsqlException ex)
+            }
+            catch (NpgsqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
         }
+        */
+      
     }
 }

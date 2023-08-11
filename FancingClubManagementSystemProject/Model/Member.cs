@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace FancingClubManagementSystemProject.Model
 {
-    internal class Member 
+    public class Member 
     {
-        private string idUser;
-        private string nameFirst;
-        private string nameLast;
-        private string dateBirth;
-        private string phone;
-        private string email;
-        private string licenceNumber;
-        private string dateLicenceExpire;
+        public string idUser { get; set; }
+        public string nameFirst { get; set; }
+        public string nameLast { get; set; }
+        public string dateBirth { get; set; }
+        public string phone { get; set; }
+
+        public string email { get; set; }
+        public string licenceNumber { get; set; }
+        public string dateLicenceExpire { get; set; }
+        public string dateRegistration { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + ": " + idUser.ToString() + ", " + nameFirst ;
+        }
     }
 }
