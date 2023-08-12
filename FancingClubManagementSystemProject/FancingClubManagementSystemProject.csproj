@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.0.143\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -103,8 +106,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\DBController.cs" />
+    <Compile Include="Controller\DBLoginController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MnageUsersController.cs" />
+    <Compile Include="Controller\RESTController.cs" />
+    <Compile Include="Controller\WPFController.cs" />
+    <Compile Include="Service\DBService.cs" />
+    <Compile Include="Service\FensingService.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManageUsersPanel.xaml.cs">
+      <DependentUpon>ManageUsersPanel.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -122,17 +136,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManageUsersPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Admin.cs" />
-    <Compile Include="Model\AdminModel.cs" />
-    <Compile Include="Model\Coach.cs" />
-    <Compile Include="Model\CoachModel.cs" />
-    <Compile Include="Model\Member.cs" />
-    <Compile Include="Model\MemberModel.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Role.cs" />
-    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -160,7 +169,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
+    <Resource Include="View\fencer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ElitFancing_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ElitFancing_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLogic\SharedLogic.csproj">
+      <Project>{e639fa90-2db7-44a8-916c-f73f4765b1ce}</Project>
+      <Name>SharedLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
