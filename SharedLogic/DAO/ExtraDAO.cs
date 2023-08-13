@@ -13,7 +13,9 @@ namespace FancingClubManagementSystemProject.DAO
     {
         Connector connector = new Connector();
 
-
+        /// <summary>
+        /// Create Member Table if not exist
+        /// </summary>
         public void createMemberTable()
         {
             connector.establishConnection();
@@ -21,7 +23,7 @@ namespace FancingClubManagementSystemProject.DAO
             {
                 connector.con.Open();
 
-                var sql = $"CREATE TABLE if not exists Member " +
+                var sql = $"CREATE TABLE if not exists Member2 " +
                 $"(" +
                 $"idMember serial PRIMARY KEY, " +
                 $"nameFirst VARCHAR (100), " +
@@ -32,11 +34,13 @@ namespace FancingClubManagementSystemProject.DAO
                 $"licenceNumber VARCHAR (100), " +
                 $"dateLicenceExpire VARCHAR (100), " +
                 $"dateRegistration timestamp " +
+                $"image BYTEA " +
+                $"group VARCHAR (100) " +
+                $"coach VARCHAR (100) " +
                 $")";
 
                 connector.cmd = new NpgsqlCommand(sql, connector.con);
-                connector.cmd.ExecuteNonQuery();
-                //connector.cmd.Parameters.AddWithValue("@login", login);
+                connector.cmd.ExecuteNonQuery(); 
             }
             //catch (NpgsqlException ex)
             //{
@@ -47,6 +51,64 @@ namespace FancingClubManagementSystemProject.DAO
                 connector.con.Close();
             }
         }
-       
+
+
+        public async Task CreateTableUser()
+        {
+            connector.establishConnection();
+            try
+            {
+                connector.con.Open();
+
+                var sql = $"CREATE TABLE if not exists Users " +
+                $"(" +
+                $"idMember serial PRIMARY KEY, " +
+                $"name VARCHAR (100) NOT NULL, " +
+                $"login VARCHAR (100) NOT NULL, " +
+                $"password VARCHAR (100) NOT NULL, " +
+                $"dateCreated timestamp " +
+                $")";
+
+                connector.cmd = new NpgsqlCommand(sql, connector.con);
+                await connector.cmd.ExecuteNonQueryAsync();
+            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
+            {
+                connector.con.Close();
+            }
+        }
+
+        public void createRegistrationTable()
+        {
+            connector.establishConnection();
+            try
+            {
+                connector.con.Open();
+
+                var sql = $"CREATE TABLE if not exists Registration " +
+                $"(" +
+                $"idRegistration serial PRIMARY KEY, " +
+                $"name VARCHAR (100), " +
+                $"contact VARCHAR (100), " +
+                $"startDate VARCHAR (100), " +
+                $"age VARCHAR (100) " +
+                $")";
+
+                connector.cmd = new NpgsqlCommand(sql, connector.con);
+                connector.cmd.ExecuteNonQuery();
+            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
+            {
+                connector.con.Close();
+            }
+        }
     }
 }

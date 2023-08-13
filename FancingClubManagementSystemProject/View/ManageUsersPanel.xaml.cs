@@ -71,26 +71,6 @@ namespace FancingClubManagementSystemProject.View
                 updateMemberTables();            
             }
 
-
-            /*
-           * Method get Member by ID 
-           */
-        private void selectMemberById_Click(object sender, RoutedEventArgs e)
-        {
-            Member member;
-
-            if (string.IsNullOrEmpty(filerIdBox.Text))
-            {
-                MessageBox.Show("Enter valid ID");
-            }
-            else
-            {
-                membersTable.ItemsSource = fs.getMemberById(filerIdBox.Text);
-            }
-               
-        }
-
-
         /*
        * Method Updates Member by  name
        */
@@ -98,9 +78,9 @@ namespace FancingClubManagementSystemProject.View
         {
             fs.updateMemberById(nameFirstBox.Text, nameLastBox.Text, dateBirthPicker.Text, 
                 phoneBox.Text, emailBox.Text, licenseBox.Text, dateLicenceExpirePicker.Text,
-                idBox.Text);
+                groupBox1.Text, coachBox.Text, idBox.Text);
 
-            MessageBox.Show("Member was added successfuly");
+            MessageBox.Show("Member info was updated successfuly");
             updateMemberTables();
 
         }
@@ -118,6 +98,51 @@ namespace FancingClubManagementSystemProject.View
            membersTable1.ItemsSource = fs.getMembersTable();
 
         }
-        
+
+        /// <summary>
+        /// Get Members list by ID. Represent a table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void filterButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Member member;
+
+            if (string.IsNullOrEmpty(filerIdBox.Text))
+            {
+                MessageBox.Show("Enter valid ID");
+            }
+            else
+            {
+                membersTable.ItemsSource = fs.filterMembersById(filerIdBox.Text);
+            }
         }
+
+        /// <summary>
+        /// Get one member by ID. Represent result as Member Info page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectMemberById_Click(object sender, RoutedEventArgs e)
+        {
+            Member member;
+
+            if (string.IsNullOrEmpty(idBox.Text))
+            {
+                MessageBox.Show("Enter valid ID");
+            }
+            else
+            {
+                member = fs.getMemberInfoById(idBox.Text);
+                nameFirstBox.Text = member.nameFirst;
+                nameLastBox.Text = member.nameLast;
+                phoneBox.Text = member.phone;
+                emailBox.Text = member.email;
+                licenseBox.Text = member.licenceNumber;
+                groupBox1.Text = member.group;
+                coachBox.Text = member.coach;
+            }
+        }
+
+    }
     }

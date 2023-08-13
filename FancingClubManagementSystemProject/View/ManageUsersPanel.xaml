@@ -32,11 +32,11 @@
                     <TextBox x:Name="filerNameLastBox" HorizontalAlignment="Left" Margin="132,210,0,0" TextWrapping="Wrap" Text="type Last Name..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="filerGroupIdBox" HorizontalAlignment="Left" Margin="173,210,0,0" TextWrapping="Wrap" Text="type Group..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.Column="1"/>
                     <TextBox x:Name="filerCoachBox" HorizontalAlignment="Left" Margin="59,210,0,0" TextWrapping="Wrap" Text="type Coach..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.Column="1"/>
-                    <Button x:Name="filterButton" Content="Filter" HorizontalAlignment="Left" Margin="299,210,0,0" VerticalAlignment="Top" Width="76" Height="16" FontSize="9" RenderTransformOrigin="-1.226,0.547" Grid.Column="1"/>
+                    <Button x:Name="filterButton" Content="Filter" HorizontalAlignment="Left" Margin="299,210,0,0" VerticalAlignment="Top" Width="76" Height="16" FontSize="9" RenderTransformOrigin="-1.226,0.547" Grid.Column="1" Click="filterButton_Click"/>
                     <Button x:Name="deleteButton" Content="Delete Member" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="115" Grid.Column="1" Click="deleteButton_Click_1"/>
                     <Label x:Name="groupLabel" Content="Group" HorizontalAlignment="Left" Margin="83,40,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <Label x:Name="coachLabel" Content="Coach" HorizontalAlignment="Left" Margin="83,70,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <TextBox x:Name="groupLabel1" HorizontalAlignment="Left" Margin="145,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <TextBox x:Name="groupBox1" HorizontalAlignment="Left" Margin="145,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
                     <TextBox x:Name="coachBox" HorizontalAlignment="Left" Margin="145,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
                     <Label x:Name="dateBirthLabel" Content="Birth Date" HorizontalAlignment="Left" Margin="21,133,0,0" VerticalAlignment="Top"/>
                     <DatePicker x:Name="dateBirthPicker" HorizontalAlignment="Left" Margin="88,137,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2"/>

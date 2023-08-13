@@ -9,6 +9,10 @@ namespace FancingClubManagementSystemProject.DAO
     {
         Connector connector = new Connector();
 
+        /// <summary>
+        /// Get All Members table
+        /// </summary>
+        /// <returns></returns>
         public DataTable getAllMembers()
         {
             DataTable dt = new DataTable();
@@ -39,10 +43,65 @@ namespace FancingClubManagementSystemProject.DAO
             return dt;
         }
 
-        /*
-         * Method get Member by Id
-         */
-        public DataTable getMemberById(int idMember)
+       /// <summary>
+       /// Get Member by ID. Represent result as Member Info page
+       /// </summary>
+       /// <param name="idMember"></param>
+       /// <returns></returns>
+        public Member getMemberInfoById(int idMember)
+        {
+            DataTable dt = new DataTable();
+            connector.establishConnection();
+            Member member = null;
+            try
+            {
+                connector.con.Open();
+
+                var sql = "Select * from public.Member where idMember=@idMember ";
+
+                connector.cmd = new NpgsqlCommand(sql, connector.con);
+                connector.cmd.Parameters.AddWithValue("@idMember", idMember);
+
+                /*
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(connector.cmd);
+                da.Fill(dt);
+                */
+                //membersTable.ItemsSource = dt.AsDataView();
+               // DataContext = da;
+
+                
+                var reader = connector.cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    member = new Member();
+                    //member.idMember = reader.GetString(0);
+                    member.nameFirst = reader.GetString(1);
+                    member.nameLast = reader.GetString(2);
+                    member.dateBirth = reader.GetString(3);
+                    member.phone = reader.GetString(4);
+                    member.email = reader.GetString(5);
+                    member.licenceNumber = reader.GetString(6);
+                    member.dateLicenceExpire = reader.GetString(7);
+                    //member.dateRegistration = reader.GetString(8);
+
+                }
+                reader.Close();
+                
+            }
+            //catch (NpgsqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            finally
+            {
+                connector.con.Close();
+            }
+
+            return member;
+        }
+
+        public DataTable filterMembersById(int idMember)
         {
             DataTable dt = new DataTable();
             connector.establishConnection();
@@ -60,15 +119,15 @@ namespace FancingClubManagementSystemProject.DAO
                 da.Fill(dt);
 
                 //membersTable.ItemsSource = dt.AsDataView();
-               // DataContext = da;
+                // DataContext = da;
 
-                
+
                 /*var reader = connector.cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
                     member = new Member();
-                    member.idUser = reader.GetString(0);
+                    member.idMember = reader.GetInteger(0);
                     member.nameFirst = reader.GetString(1);
                     member.nameLast = reader.GetString(2);
                     member.dateBirth = reader.GetString(3);
@@ -80,7 +139,7 @@ namespace FancingClubManagementSystemProject.DAO
 
                 }
                 reader.Close();*/
-                
+
             }
             //catch (NpgsqlException ex)
             //{
@@ -137,7 +196,7 @@ namespace FancingClubManagementSystemProject.DAO
 
 
         public void updateMemberByID(string nameFirst, string nameLast, string dateBirth,
-            string phone, string email, string licenceNumber, string dateLicenceExpire, int idMember)
+            string phone, string email, string licenceNumber, string dateLicenceExpire, string group, string coach, int idMember)
             {
                 connector.establishConnection();
                 try
@@ -146,7 +205,8 @@ namespace FancingClubManagementSystemProject.DAO
 
                     string Query = "update public.Member set nameFirst=@nameFirst, nameLast=@nameLast, " +
                         "dateBirth=@dateBirth, phone=@phone, email=@email, licenceNumber=@licenceNumber, " +
-                        "dateLicenceExpire=@dateLicenceExpire  where idMember=@idMember ";
+                        "dateLicenceExpire=@dateLicenceExpire, group=@group, coach=@coach" +
+                        "  where idMember=@idMember ";
 
                     connector.cmd = new NpgsqlCommand(Query, connector.con);
 
@@ -157,6 +217,8 @@ namespace FancingClubManagementSystemProject.DAO
                     connector.cmd.Parameters.AddWithValue("@email", email);
                     connector.cmd.Parameters.AddWithValue("@licenceNumber", licenceNumber);
                     connector.cmd.Parameters.AddWithValue("@dateLicenceExpire", dateLicenceExpire);
+                    connector.cmd.Parameters.AddWithValue("@group", group);
+                    connector.cmd.Parameters.AddWithValue("@coach", group);
                     connector.cmd.Parameters.AddWithValue("@idMember", idMember);
 
                     connector.cmd.ExecuteNonQuery();
