@@ -120,6 +120,9 @@
     <Compile Include="View\ManageUsersPanel.xaml.cs">
       <DependentUpon>ManageUsersPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MemberInfoPanel.xaml.cs">
+      <DependentUpon>MemberInfoPanel.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManageUsersPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MemberInfoPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

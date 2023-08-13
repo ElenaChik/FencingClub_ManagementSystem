@@ -93,9 +93,13 @@ namespace FancingClubManagementSystemProject.View
         /*
          * Method updates Member Table at the Member List Tab by the Button UPDATE
          */
-        private void updateMembersTableButton_Click(object sender, RoutedEventArgs e)
+        private void showMemberInfoButton_Click(object sender, RoutedEventArgs e)
         {
-           membersTable1.ItemsSource = fs.getMembersTable();
+            Member mem = membersTable.SelectedItem as Member;
+            //fs.getMemberInfoById(member.idMember);
+
+            MemberInfoPanel membInfo = new MemberInfoPanel();
+            membInfo.Show();
 
         }
 
