@@ -6,17 +6,28 @@
         xmlns:local="clr-namespace:FancingClubManagementSystemProject.View"
         mc:Ignorable="d"
         Title="LoginPage" Height="450" Width="800">
-    <Grid>
-     
-        <PasswordBox x:Name="passBox" HorizontalAlignment="Left" Margin="27,222,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="loginBox" HorizontalAlignment="Left" Margin="27,178,0,0" TextWrapping="Wrap" Text="login" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="addUserLabel" Content="Add new User" HorizontalAlignment="Left" Margin="28,41,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="addUserButton" Content="Add User" HorizontalAlignment="Left" Margin="49,273,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="tableDataGrid"  Margin="195,105,37,48" />
-        <Button x:Name="updateTableButton" Content="Update Table" HorizontalAlignment="Left" Margin="238,41,0,0" VerticalAlignment="Top" />
-       
-           
-    </Grid>
+
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Left" Width="300" FontSize="24" FontWeight="Bold" UseLayoutRounding="False" BorderBrush="#FFBD2929">
+            <MenuItem x:Name="manageUsersMenu" Header="_Manage Users" Click="MenuItem_Click" RenderTransformOrigin="0.573,6.223" Padding="15,5,15,5" Margin="15,15,15,15" Foreground="#FF212121" BorderBrush="#FFD41515">
+                <MenuItem Header="_ManageMember" />
+                <MenuItem Header="_ManageCoach" />
+                <Separator />
+                <MenuItem Header="_MemberList" />
+            </MenuItem>
+            <MenuItem x:Name="CampRegistrationMenu" Header="_Camp Registration" Padding="15,5,15,5" Margin="15,15,15,15" Foreground="#FF212121" BorderBrush="#FFD41515" Click="CampRegistrationMenu_Click"/>
+            <MenuItem x:Name="InventoryMenu" Header="_Inventory" HorizontalAlignment="Left" Padding="15,5,15,5" Margin="15,15,15,15" Foreground="#FF212121" BorderBrush="#FFD41515" Click="InventoryMenu_Click">
+            </MenuItem>
+            <MenuItem x:Name="Attendance" Header="_Attendance" Padding="15,5,15,5" Margin="15,15,15,15" Foreground="#FF212121" BorderBrush="#FFD41515" Click="Attendance_Click_1"/>
+        </Menu>
+        <TextBox AcceptsReturn="True" />
+        <Image Width="236" Source="/View/ElitFancing_logo.png"/>
+
+    </DockPanel>
+
+
+
 
 
 </Window>

@@ -15,7 +15,8 @@
                 <Grid x:Name="groupBox" Background="#FFE5E5E5" Margin="0,-7,0,7">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="177*"/>
-                        <ColumnDefinition Width="617*"/>
+                        <ColumnDefinition Width="70*"/>
+                        <ColumnDefinition Width="547*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="memberCardLabel" Content="Member Info" HorizontalAlignment="Left" Margin="18,14,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="idLabel" Content="ID user" HorizontalAlignment="Left" Margin="18,40,0,0" VerticalAlignment="Top"/>
@@ -24,31 +25,31 @@
                     <TextBox x:Name="idBox" HorizontalAlignment="Left" Margin="85,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="nameFirstBox" HorizontalAlignment="Left" Margin="85,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="nameLastBox" HorizontalAlignment="Left" Margin="85,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-                    <Image x:Name="photoMember" HorizontalAlignment="Left" Height="108" Margin="418,14,0,0" VerticalAlignment="Top" Width="77" Source="/View/Member.png" Grid.Column="1"/>
+                    <Image x:Name="photoMember" HorizontalAlignment="Left" Height="108" Margin="348,14,0,0" VerticalAlignment="Top" Width="77" Source="/View/Member.png" Grid.Column="2"/>
                     <Button x:Name="addMemberButton" Content="Add new Member" HorizontalAlignment="Left" Width="115" VerticalAlignment="Bottom" Click="addMemberButton_Click"/>
-                    <Button x:Name="updateMemberButton" Content="Update Member" Margin="324,0,0,0" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Click="updateMemberButton_Click_1"/>
-                    <DataGrid x:Name="membersTable" Height="NaN" Margin="18,236,28,41" Width="NaN" Grid.ColumnSpan="2" />
+                    <Button x:Name="updateMemberButton" Content="Update Member" Margin="254,0,0,0" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Click="updateMemberButton_Click_1"/>
+                    <DataGrid x:Name="membersTable" Height="NaN" Margin="18,236,28,41" Width="NaN" Grid.ColumnSpan="3" />
                     <TextBox x:Name="filerIdBox" HorizontalAlignment="Left" Margin="20,210,0,0" TextWrapping="Wrap" Text="type id..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic"/>
                     <TextBox x:Name="filerNameLastBox" HorizontalAlignment="Left" Margin="132,210,0,0" TextWrapping="Wrap" Text="type Last Name..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="filerGroupIdBox" HorizontalAlignment="Left" Margin="173,210,0,0" TextWrapping="Wrap" Text="type Group..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.Column="1"/>
-                    <TextBox x:Name="filerCoachBox" HorizontalAlignment="Left" Margin="59,210,0,0" TextWrapping="Wrap" Text="type Coach..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.Column="1"/>
-                    <Button x:Name="filterButton" Content="Filter" HorizontalAlignment="Left" Margin="299,210,0,0" VerticalAlignment="Top" Width="76" Height="16" FontSize="9" RenderTransformOrigin="-1.226,0.547" Grid.Column="1"/>
-                    <Button x:Name="deleteButton" Content="Delete Member" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="115" Grid.Column="1" Click="deleteButton_Click_1"/>
-                    <Label x:Name="groupLabel" Content="Group" HorizontalAlignment="Left" Margin="83,40,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label x:Name="coachLabel" Content="Coach" HorizontalAlignment="Left" Margin="83,70,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <TextBox x:Name="groupLabel1" HorizontalAlignment="Left" Margin="145,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
-                    <TextBox x:Name="coachBox" HorizontalAlignment="Left" Margin="145,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <TextBox x:Name="filerGroupIdBox" HorizontalAlignment="Left" Margin="103,210,0,0" TextWrapping="Wrap" Text="type Group..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.Column="2"/>
+                    <TextBox x:Name="filerCoachBox" HorizontalAlignment="Left" Margin="59,210,0,0" TextWrapping="Wrap" Text="type Coach..." VerticalAlignment="Top" Width="85" FontSize="9" FontStyle="Italic" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="filterButton" Content="Filter" HorizontalAlignment="Left" Margin="229,210,0,0" VerticalAlignment="Top" Width="76" Height="16" FontSize="9" RenderTransformOrigin="-1.226,0.547" Grid.Column="2" Click="filterButton_Click"/>
+                    <Button x:Name="deleteButton" Content="Delete Member" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="115" Grid.Column="2" Click="deleteButton_Click_1"/>
+                    <Label x:Name="groupLabel" Content="Group" HorizontalAlignment="Left" Margin="13,40,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="coachLabel" Content="Coach" HorizontalAlignment="Left" Margin="13,70,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="groupBox1" HorizontalAlignment="Left" Margin="75,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" />
+                    <TextBox x:Name="coachBox" HorizontalAlignment="Left" Margin="75,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" />
                     <Label x:Name="dateBirthLabel" Content="Birth Date" HorizontalAlignment="Left" Margin="21,133,0,0" VerticalAlignment="Top"/>
                     <DatePicker x:Name="dateBirthPicker" HorizontalAlignment="Left" Margin="88,137,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2"/>
-                    <Label x:Name="licenseLable" Content="License" HorizontalAlignment="Left" Margin="321,133,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label x:Name="dateLicenseExpireLable" Content="Expire Date" HorizontalAlignment="Left" Margin="305,163,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <TextBox x:Name="licenseBox" Margin="383,137,114,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" />
-                    <Label x:Name="phoneLable" Content="Phone" HorizontalAlignment="Left" Margin="83,133,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label x:Name="emailLable" Content="E-mail" HorizontalAlignment="Left" Margin="85,163,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <TextBox x:Name="phoneBox" HorizontalAlignment="Left" Margin="145,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
-                    <TextBox x:Name="emailBox" HorizontalAlignment="Left" Margin="145,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" />
-                    <DatePicker x:Name="dateLicenceExpirePicker" HorizontalAlignment="Left" Margin="383,167,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <Button x:Name="selectMemberById" Grid.Column="1" Content="Select by ID" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Bottom" Click="selectMemberById_Click"/>
+                    <Label x:Name="licenseLable" Content="License" HorizontalAlignment="Left" Margin="251,133,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="dateLicenseExpireLable" Content="Expire Date" HorizontalAlignment="Left" Margin="235,163,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="licenseBox" Margin="313,137,114,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" />
+                    <Label x:Name="phoneLable" Content="Phone" HorizontalAlignment="Left" Margin="13,133,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label x:Name="emailLable" Content="E-mail" HorizontalAlignment="Left" Margin="15,163,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="phoneBox" HorizontalAlignment="Left" Margin="75,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" />
+                    <TextBox x:Name="emailBox" HorizontalAlignment="Left" Margin="75,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2" />
+                    <DatePicker x:Name="dateLicenceExpirePicker" HorizontalAlignment="Left" Margin="313,167,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Button x:Name="selectMemberById" Grid.Column="2" Content="Select by ID" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Bottom" Click="selectMemberById_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="coachTab" Header="Manage Coaches">
@@ -64,9 +65,8 @@
                     <TextBox x:Name="cidBox" HorizontalAlignment="Left" Margin="28,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="cnameFirstBox" HorizontalAlignment="Left" Margin="28,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="cnameLastBox" HorizontalAlignment="Left" Margin="28,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <Image HorizontalAlignment="Left" Height="83" Margin="628,30,0,0" VerticalAlignment="Top" Width="83" Source="/View/fencer.jpg" Grid.Column="1"/>
+                    <Image HorizontalAlignment="Left" Height="252" Margin="433,30,0,0" VerticalAlignment="Top" Width="278" Source="/View/fencer.jpg" Grid.Column="1"/>
                     <Button x:Name="caddMemberButton" Content="Add new Coach" HorizontalAlignment="Left" Margin="18,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <Button x:Name="cupdateMemberButton" Content="Update Coach" HorizontalAlignment="Left" Margin="176,150,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <Label x:Name="cloginLabel" Content="Login" HorizontalAlignment="Left" Margin="192,39,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <Label x:Name="cpasswordLabel" Content="Password" HorizontalAlignment="Left" Margin="192,70,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <TextBox x:Name="cloginBox" HorizontalAlignment="Left" Margin="265,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
@@ -79,12 +79,13 @@
             <TabItem x:Name="memberListTab" Header="Member List">
                 <Grid x:Name="groupBox2" Background="#FFE5E5E5" Margin="0,-7,0,7">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="177*"/>
+                        <ColumnDefinition Width="149*"/>
+                        <ColumnDefinition Width="28*"/>
                         <ColumnDefinition Width="617*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="membersTable1" Grid.ColumnSpan="2" Margin="31,62,31,52" Height="NaN" Width="NaN" SelectionChanged="membersTable1_SelectionChanged"/>
-                    <Label x:Name="memberListLabel" Content="Fencing Club Members " Margin="127,20,0,0" VerticalAlignment="Top" Width="NaN" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <Button x:Name="updateMembersTableButton" Content="UPDATE" HorizontalAlignment="Left" Margin="180,10,0,0" VerticalAlignment="Bottom" Grid.Column="1" Click="updateMembersTableButton_Click"/>
+                    <DataGrid x:Name="membersTable1" SelectionMode="Single" Grid.ColumnSpan="3" Margin="31,62,31,52" Height="NaN" Width="NaN" />
+                    <Label x:Name="memberListLabel" Content="Fencing Club Members " Margin="127,20,0,0" VerticalAlignment="Top" Width="NaN" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+                    <Button x:Name="showMemberInfoButton" Content="SHOW Info" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Bottom" Grid.Column="2" Click="showMemberInfoButton_Click" FontWeight="Bold"/>
 
                 </Grid>
 

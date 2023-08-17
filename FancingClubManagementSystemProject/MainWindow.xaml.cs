@@ -87,10 +87,11 @@ namespace FancingClubManagementSystemProject
         public MainWindow()
         {
             InitializeComponent();
-            //ExtraDAO extraDAO = new ExtraDAO();
+            ExtraDAO extraDAO = new ExtraDAO();
             //MemberDAO memberDAO = new MemberDAO();
 
             //extraDAO.createMemberTable();
+           // extraDAO.createRegistrationTable();
             
         }
 
@@ -105,7 +106,10 @@ namespace FancingClubManagementSystemProject
             if (fs.isLoginValid(loginBox1.Text, passwordBox.Password))
             {
                 ManageUsersPanel manageUser = new ManageUsersPanel();
-                manageUser.Show();
+                LoginPage lp = new LoginPage();
+                lp.Show();
+
+                //manageUser.Show();
                 this.Close();
             }
                 else
@@ -115,7 +119,7 @@ namespace FancingClubManagementSystemProject
 
         }
 
-       /* public async Task<Users> readUsers(int idUser)
+       /* public async Task<Users> readUsers(int idMember)
         {
             Task<Users> user = null;
             await using (NpgsqlDataReader reader = await cmd.ExecuteReaderAsync())
@@ -125,7 +129,7 @@ namespace FancingClubManagementSystemProject
                      Users users = await readUsers(reader);
                     //login = reader[0].ToString();
                    // password = reader[1].ToString();
-                    //idUser  = reader[2].ToString;
+                    //idMember  = reader[2].ToString;
                 }
             }
             return null;

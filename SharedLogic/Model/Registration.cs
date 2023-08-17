@@ -2,12 +2,11 @@
 {
     public class Registration
     {
-        private int idRegistration { get; set; }
-        private string name { get; set; }
-        private string contact { get; set; }
-
-        private string  age { get; set; }
-        private string startDate { get; set; }
+        public int idRegistration { get; set; }
+        public string name { get; set; }
+        public string contact { get; set; }
+        public string startDate { get; set; }
+        public string age { get; set; }
 
         public Registration() { }
         public Registration(string name, string contact, string age, string startdate ) 
@@ -19,10 +18,10 @@
             this.startDate = startdate;
         }
 
-        public Registration addRegistration()
-        {
-            return new Registration( name, contact, age, startDate);
-        }
+       // public Registration addRegistration()
+        //{
+       //     return new Registration( name, contact, age, startDate);
+       // }
 
         public override string ToString()
         {

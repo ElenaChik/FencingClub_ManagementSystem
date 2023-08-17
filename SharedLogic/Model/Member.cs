@@ -8,7 +8,7 @@ namespace FancingClubManagementSystemProject.Model
 {
     public class Member 
     {
-        public string idUser { get; set; }
+        public int idMember { get; set; }
         public string nameFirst { get; set; }
         public string nameLast { get; set; }
         public string dateBirth { get; set; }
@@ -18,10 +18,16 @@ namespace FancingClubManagementSystemProject.Model
         public string licenceNumber { get; set; }
         public string dateLicenceExpire { get; set; }
         public string dateRegistration { get; set; }
+        public string groupe { get; set; }
+        public string coach { get; set; }
+        public string image { get; set; }
+
+        public Member() { }
+
 
         public override string ToString()
         {
-            return base.ToString() + ": " + idUser.ToString() + ", " + nameFirst ;
+            return base.ToString() + ": " + idMember.ToString() + ", " + nameFirst ;
         }
     }
 }

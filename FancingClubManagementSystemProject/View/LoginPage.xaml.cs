@@ -75,7 +75,33 @@ namespace FancingClubManagementSystemProject.View
             
         }
 
-        
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ManageUsersPanel mu = new ManageUsersPanel(); 
+            mu.Show();
+        }
+
+        private void CampRegistrationMenu_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationCamp rc = new RegistrationCamp();
+            rc.Show();
+        }
+
+        private void InventoryMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Inventory inv = new Inventory();
+            inv.Show();
+        }
+
+       
+
+        private void Attendance_Click_1(object sender, RoutedEventArgs e)
+        {
+            Attendance att = new Attendance();
+            att.Show();
+        }
+
+
         /*
          * Method add new Member user
          */
@@ -152,6 +178,6 @@ namespace FancingClubManagementSystemProject.View
             }
         }
         */
-      
+
     }
 }

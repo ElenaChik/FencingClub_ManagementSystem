@@ -9,8 +9,9 @@ namespace FancingClubManagementSystemProject.Model
 {
     public class Group
     {
-        private int OidGroup { get;set; }
-        private string Name { get;set; }
-        private string Description { get;set; }
+        private int idGroup { get;set; }
+        private string name { get;set; }
+        private string description { get;set; }
+        private string age { get;set; }
     }
 }
