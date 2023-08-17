@@ -23,7 +23,7 @@ namespace FancingClubManagementSystemProject.DAO
             {
                 connector.con.Open();
 
-                var sql = $"CREATE TABLE if not exists Member2 " +
+                var sql = $"CREATE TABLE if not exists Member " +
                 $"(" +
                 $"idMember serial PRIMARY KEY, " +
                 $"nameFirst VARCHAR (100), " +
@@ -35,17 +35,13 @@ namespace FancingClubManagementSystemProject.DAO
                 $"dateLicenceExpire VARCHAR (100), " +
                 $"dateRegistration timestamp " +
                 $"image BYTEA " +
-                $"group VARCHAR (100) " +
+                $"groupe VARCHAR (100) " +
                 $"coach VARCHAR (100) " +
                 $")";
 
                 connector.cmd = new NpgsqlCommand(sql, connector.con);
                 connector.cmd.ExecuteNonQuery(); 
             }
-            //catch (NpgsqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
             finally
             {
                 connector.con.Close();
@@ -72,10 +68,6 @@ namespace FancingClubManagementSystemProject.DAO
                 connector.cmd = new NpgsqlCommand(sql, connector.con);
                 await connector.cmd.ExecuteNonQueryAsync();
             }
-            //catch (NpgsqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
             finally
             {
                 connector.con.Close();
@@ -101,10 +93,6 @@ namespace FancingClubManagementSystemProject.DAO
                 connector.cmd = new NpgsqlCommand(sql, connector.con);
                 connector.cmd.ExecuteNonQuery();
             }
-            //catch (NpgsqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
             finally
             {
                 connector.con.Close();

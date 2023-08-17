@@ -38,10 +38,6 @@ namespace FancingClubManagementSystemProject.DAO
                 }
                 reader.Close();
             }
-            //catch (NpgsqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
             finally 
             { 
                 connector.con.Close(); 

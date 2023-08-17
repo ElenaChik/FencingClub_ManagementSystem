@@ -66,7 +66,7 @@ namespace FancingClubManagementSystemProject.View
             
             private void deleteButton_Click_1(object sender, RoutedEventArgs e)
             {
-                fs.deleteMemberById(filerIdBox.Text);
+                fs.deleteMemberById(idBox.Text);
                 MessageBox.Show("Member was deleted successfuly");
                 updateMemberTables();            
             }
@@ -91,16 +91,32 @@ namespace FancingClubManagementSystemProject.View
         }
 
         /*
-         * Method updates Member Table at the Member List Tab by the Button UPDATE
+         * Method get selected Member Table from the Member List Tab by the Button SHOW info
          */
         private void showMemberInfoButton_Click(object sender, RoutedEventArgs e)
         {
-            Member mem = membersTable.SelectedItem as Member;
-            //fs.getMemberInfoById(member.idMember);
+            DataRowView vrow = (DataRowView)membersTable1.SelectedItem;
+            //DataRow row = vrow.Row;
 
-            MemberInfoPanel membInfo = new MemberInfoPanel();
+            Member member = DataRowViewToMember(vrow);
+
+            MemberInfoPanel membInfo = new MemberInfoPanel(member);
             membInfo.Show();
+        }
 
+        private Member DataRowViewToMember(DataRowView vrow)
+        {
+            Member member = new Member();
+            member.idMember = (int)vrow["idmember"];
+            member.nameFirst = (string)vrow["namefirst"];
+            member.nameLast = (string)vrow["namelast"];
+            member.phone = (string)vrow["phone"];
+            member.email = (string)vrow["email"];
+            member.licenceNumber = (string)vrow["licenceNumber"];
+            member.groupe = (string)vrow["groupe"];
+            member.coach = (string)vrow["coach"];
+
+            return member;
         }
 
         /// <summary>
@@ -143,7 +159,7 @@ namespace FancingClubManagementSystemProject.View
                 phoneBox.Text = member.phone;
                 emailBox.Text = member.email;
                 licenseBox.Text = member.licenceNumber;
-                groupBox1.Text = member.group;
+                groupBox1.Text = member.groupe;
                 coachBox.Text = member.coach;
             }
         }

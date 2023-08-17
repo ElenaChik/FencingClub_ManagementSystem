@@ -106,7 +106,10 @@ namespace FancingClubManagementSystemProject
             if (fs.isLoginValid(loginBox1.Text, passwordBox.Password))
             {
                 ManageUsersPanel manageUser = new ManageUsersPanel();
-                manageUser.Show();
+                LoginPage lp = new LoginPage();
+                lp.Show();
+
+                //manageUser.Show();
                 this.Close();
             }
                 else

@@ -196,7 +196,7 @@ namespace FancingClubManagementSystemProject.DAO
 
 
         public void updateMemberByID(string nameFirst, string nameLast, string dateBirth,
-            string phone, string email, string licenceNumber, string dateLicenceExpire, string group, string coach, int idMember)
+            string phone, string email, string licenceNumber, string dateLicenceExpire, string groupe, string coach, int idMember)
             {
                 connector.establishConnection();
                 try
@@ -205,7 +205,7 @@ namespace FancingClubManagementSystemProject.DAO
 
                     string Query = "update public.Member set nameFirst=@nameFirst, nameLast=@nameLast, " +
                         "dateBirth=@dateBirth, phone=@phone, email=@email, licenceNumber=@licenceNumber, " +
-                        "dateLicenceExpire=@dateLicenceExpire, group=@group, coach=@coach" +
+                        "dateLicenceExpire=@dateLicenceExpire, groupe=@groupe, coach=@coach " +
                         "  where idMember=@idMember ";
 
                     connector.cmd = new NpgsqlCommand(Query, connector.con);
@@ -217,8 +217,8 @@ namespace FancingClubManagementSystemProject.DAO
                     connector.cmd.Parameters.AddWithValue("@email", email);
                     connector.cmd.Parameters.AddWithValue("@licenceNumber", licenceNumber);
                     connector.cmd.Parameters.AddWithValue("@dateLicenceExpire", dateLicenceExpire);
-                    connector.cmd.Parameters.AddWithValue("@group", group);
-                    connector.cmd.Parameters.AddWithValue("@coach", group);
+                    connector.cmd.Parameters.AddWithValue("@groupe", groupe);
+                    connector.cmd.Parameters.AddWithValue("@coach", coach);
                     connector.cmd.Parameters.AddWithValue("@idMember", idMember);
 
                     connector.cmd.ExecuteNonQuery();

@@ -9,8 +9,8 @@ namespace SharedLogic.Model
     {
         public int statusCode {  get; set; }
         public string statusMessage { get; set; }
-        public Registration registration { get; set; } // need parametrise
-        public List<Registration> registrations { get; set; }
+        public Member member { get; set; } 
+        public List<Member> members { get; set; }
 
     }
 }

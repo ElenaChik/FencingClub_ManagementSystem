@@ -12,6 +12,7 @@ using System.Windows;
 using FancingClubManagementSystemProject.Model;
 using System.Data;
 using SharedLogic.DAO;
+using SharedLogic.Model;
 
 namespace FancingClubManagementSystemProject.Service
 {
@@ -21,6 +22,9 @@ namespace FancingClubManagementSystemProject.Service
         UserDAO userDAO = new UserDAO();
         MemberDAO memberDAO = new MemberDAO();
         RegistrationDAO regDAO = new RegistrationDAO();
+        InventoryDAO invDAO = new InventoryDAO();
+        ClassAttendanceDAO attDAO = new ClassAttendanceDAO();
+
 
       /// <summary>
       /// Get Password by Login from User
@@ -124,10 +128,27 @@ namespace FancingClubManagementSystemProject.Service
             regDAO.addRegistration(name, contact, startDate, age);
         }
 
-        public DataTable getAllRegistration()
+        public DataView getAllRegistration()
         {
-            return regDAO.getAllRegistration();
+            return regDAO.getAllRegistration().AsDataView();
         }
+
+        public DataView getAllInventory()
+        {
+            return invDAO.getAllInventory().AsDataView();
+        }
+
+        public void addAttendance(string date, string group, string coach, string idMember)
+        {
+            attDAO.addClassAttendance( date, int.Parse(group), int.Parse(coach),  int.Parse(idMember));
+        }
+
+        public DataView getAllAttendance()
+        {
+            return attDAO.getAllAttendance().AsDataView();
+        }
+
+
 
     }
 }

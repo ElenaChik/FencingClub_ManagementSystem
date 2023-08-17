@@ -14,24 +14,6 @@ namespace FencingAPI.Controllers
     [ApiController]
     public class APIController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-
-        public APIController(IConfiguration configuration)
-        {
-            /*
-           *The IConfiguration in this constructor space is going to be invoked when
-           * the class instance is created.This is going to to grab the connection from
-           * the appsettings and then going to send it back the configuration object
-           * or instance of this scope;
-           * ex:  NpgsqlConnection con = new NpgsqlConnection(_configuration.GetConnectionString("studentConnection").ToString());
-            */
-            _configuration = configuration;
-        }
-
-
-
-        
-       
 
         [HttpPost]
         [Route("addRegistration")]
@@ -64,6 +46,8 @@ namespace FencingAPI.Controllers
             return table;
         }
 
+
+
         [HttpPost]
         [Route("addMember")]
         public IActionResult AddMember(Member memb)
@@ -91,7 +75,7 @@ namespace FencingAPI.Controllers
         {
             var fs = new FensingService();
             fs.updateMemberById(memb.nameFirst, memb.nameLast, memb.dateBirth,
-                memb.phone, memb.email, memb.licenceNumber, memb.dateLicenceExpire, memb.group, memb.coach, id);
+                memb.phone, memb.email, memb.licenceNumber, memb.dateLicenceExpire, memb.groupe, memb.coach, id);
 
             return Ok();
         }

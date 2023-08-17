@@ -20,7 +20,6 @@ namespace FancingClubManagementSystemProject.DB
          */
         private string getConnectionString()
         {
-
             string host = "Host=localhost;";
             string port = "Port=5432;";
             string dbName = "Database=FencingClubManagementSystem;";
@@ -36,23 +35,7 @@ namespace FancingClubManagementSystemProject.DB
          */
         public void establishConnection()
         {
-            // connection adapter
-            //NpgsqlConnection con;
-            // sql command adapter
-            //NpgsqlCommand cmd;
-
-            //try
-            //{
-                // create the connection
                 con = new NpgsqlConnection(getConnectionString());
-                //con.Open();
-
-                //MessageBox.Show("Database Connection Successful");
-            //}
-            //catch (NpgsqlException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
 
     }

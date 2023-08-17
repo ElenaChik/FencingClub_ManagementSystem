@@ -65,9 +65,8 @@
                     <TextBox x:Name="cidBox" HorizontalAlignment="Left" Margin="28,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="cnameFirstBox" HorizontalAlignment="Left" Margin="28,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="cnameLastBox" HorizontalAlignment="Left" Margin="28,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <Image HorizontalAlignment="Left" Height="83" Margin="628,30,0,0" VerticalAlignment="Top" Width="83" Source="/View/fencer.jpg" Grid.Column="1"/>
+                    <Image HorizontalAlignment="Left" Height="252" Margin="433,30,0,0" VerticalAlignment="Top" Width="278" Source="/View/fencer.jpg" Grid.Column="1"/>
                     <Button x:Name="caddMemberButton" Content="Add new Coach" HorizontalAlignment="Left" Margin="18,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <Button x:Name="cupdateMemberButton" Content="Update Coach" HorizontalAlignment="Left" Margin="176,150,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <Label x:Name="cloginLabel" Content="Login" HorizontalAlignment="Left" Margin="192,39,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <Label x:Name="cpasswordLabel" Content="Password" HorizontalAlignment="Left" Margin="192,70,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     <TextBox x:Name="cloginBox" HorizontalAlignment="Left" Margin="265,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
@@ -80,12 +79,13 @@
             <TabItem x:Name="memberListTab" Header="Member List">
                 <Grid x:Name="groupBox2" Background="#FFE5E5E5" Margin="0,-7,0,7">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="177*"/>
+                        <ColumnDefinition Width="149*"/>
+                        <ColumnDefinition Width="28*"/>
                         <ColumnDefinition Width="617*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="membersTable1" SelectionMode="Single" Grid.ColumnSpan="2" Margin="31,62,31,52" Height="NaN" Width="NaN" SelectionChanged="membersTable1_SelectionChanged"/>
-                    <Label x:Name="memberListLabel" Content="Fencing Club Members " Margin="127,20,0,0" VerticalAlignment="Top" Width="NaN" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <Button x:Name="showMemberInfoButton" Content="SHOW Info" HorizontalAlignment="Left" Margin="180,10,0,0" VerticalAlignment="Bottom" Grid.Column="1" Click="showMemberInfoButton_Click" FontWeight="Bold"/>
+                    <DataGrid x:Name="membersTable1" SelectionMode="Single" Grid.ColumnSpan="3" Margin="31,62,31,52" Height="NaN" Width="NaN" />
+                    <Label x:Name="memberListLabel" Content="Fencing Club Members " Margin="127,20,0,0" VerticalAlignment="Top" Width="NaN" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+                    <Button x:Name="showMemberInfoButton" Content="SHOW Info" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Bottom" Grid.Column="2" Click="showMemberInfoButton_Click" FontWeight="Bold"/>
 
                 </Grid>
 
